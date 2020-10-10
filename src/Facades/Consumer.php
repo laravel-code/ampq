@@ -8,6 +8,6 @@ class Consumer extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'Consumer';
+        return \LaravelCode\AMPQ\Consumer::class;
     }
 }

@@ -8,6 +8,6 @@ class Publisher extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'Publisher';
+        return \LaravelCode\AMPQ\Publisher::class;
     }
 }

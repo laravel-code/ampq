@@ -8,6 +8,6 @@ class Connector extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'Connector';
+        return \LaravelCode\AMPQ\Connector::class;
     }
 }
