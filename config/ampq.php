@@ -1,4 +1,5 @@
 <?php
+
 return [
     'host' => env('AMPQ_HOST'),
     'port' => env('AMPQ_PORT', 5672),

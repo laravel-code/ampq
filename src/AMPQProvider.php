@@ -30,13 +30,20 @@ class AMPQProvider extends ServiceProvider
         }
 
         app()->bind(Connector::class, function () {
+            assert(config('ampq.host'));
+            assert(config('ampq.port'));
+            assert(config('ampq.user'));
+            assert(config('ampq.pass'));
+            assert(config('ampq.vhost'));
+            assert(config('ampq.consumer'));
+
             return new Connector(
                 config('ampq.host'),
                 config('ampq.port'),
                 config('ampq.user'),
                 config('ampq.pass'),
                 config('ampq.vhost'),
-                config('ampq.consumer'),
+                config('ampq.consumer')
             );
         });
 
