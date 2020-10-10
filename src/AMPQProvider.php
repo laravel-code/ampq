@@ -36,7 +36,6 @@ class AMPQProvider extends ServiceProvider
                 'user' => 'required',
                 'pass' => 'required',
                 'vhost' => 'required',
-                'consumer' => 'required',
             ]);
 
             if ($validator->fails()) {

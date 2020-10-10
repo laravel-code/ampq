@@ -18,7 +18,7 @@ class Connector implements ConnectionInterface
 
     private $consumer;
 
-    public function __construct($host, $port, $user, $pass, $vhost, string $consumer)
+    public function __construct($host, $port, $user, $pass, $vhost, string $consumer = null)
     {
         $this->connection = new AMQPStreamConnection($host, $port, $user, $pass, $vhost);
         $this->channel = $this->connection->channel();
