@@ -1,0 +1,40 @@
+{
+    "name": "laravel-code/ampq",
+    "description": "Ampq intergration for laravel",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "raymond",
+            "email": "rsvvuuren@hotmail.com"
+        }
+    ],
+    "require": {
+        "php-amqplib/php-amqplib": "^2.12"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.16"
+    },
+    "scripts": {
+        "fix": [
+            "php-cs-fixer fix"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AMPQProvider"
+            ],
+            "aliases": {
+                "Connector": "LaravelCode\\AMPQ\\Facades\\Connector",
+                "Consumer": "LaravelCode\\AMPQ\\Facades\\Consumer",
+                "Publisher": "LaravelCode\\AMPQ\\Facades\\Publisher"
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "LaravelCode\\AMPQ\\": "src"
+        }
+    }
+}
