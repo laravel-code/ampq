@@ -23,7 +23,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "AMPQProvider"
+                "LaravelCode\\AMPQ\\AMPQProvider"
             ],
             "aliases": {
                 "Connector": "LaravelCode\\AMPQ\\Facades\\Connector",
