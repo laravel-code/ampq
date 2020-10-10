@@ -30,12 +30,18 @@ class AMPQProvider extends ServiceProvider
         }
 
         app()->bind(Connector::class, function () {
-            assert(config('ampq.host'));
-            assert(config('ampq.port'));
-            assert(config('ampq.user'));
-            assert(config('ampq.pass'));
-            assert(config('ampq.vhost'));
-            assert(config('ampq.consumer'));
+            $validator = \Validator::make(config('ampq'), [
+                'host' => 'required',
+                'port' => 'required',
+                'user' => 'required',
+                'pass' => 'required',
+                'vhost' => 'required',
+                'consumer' => 'required',
+            ]);
+
+            if ($validator->fails()) {
+                throw new ConfigException($validator->errors(), 400);
+            }
 
             return new Connector(
                 config('ampq.host'),
