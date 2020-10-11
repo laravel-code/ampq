@@ -11,6 +11,19 @@ Laravel will automatically discover this package.
 After installation the config file should be published with the following command.
 ``php artisan vendor:publish --tag=ampq``
 
+Registering the facades in ``config\app.php`` under ``aliases``
+
+````php
+[
+    ...
+
+    'aliases' => [
+        ...
+        'Consumer' => \LaravelCode\AMPQ\Facades\Consumer::class,
+        'Publisher' => \LaravelCode\AMPQ\Facades\Publisher::class,
+    ]
+]
+````
 
 ## Publisher
 
